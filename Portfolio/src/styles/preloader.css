@@ -1,0 +1,180 @@
+/* =====================================================================
+   PRELOADER — full-screen loading screen shown before first paint of
+   content. Uses the same design tokens as the rest of the site (palette
+   vars, --ease, Space Grotesk) so it themes correctly across all 10
+   palettes and both light/dark automatically. Reuses the existing
+   `nodePing` keyframes from design-system.css for visual consistency with
+   the scroll-trace nodes. The centre readout is a split-flap / departure-
+   board display (see SplitFlapText) driven by real asset-load progress.
+   ===================================================================== */
+
+.preloader{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 18% 18%, var(--amb-1), transparent 45%),
+    radial-gradient(circle at 82% 86%, var(--amb-2), transparent 50%),
+    var(--paper);
+  opacity:1;
+  visibility:visible;
+  transition:opacity .7s var(--ease), visibility .7s var(--ease), filter .7s var(--ease);
+}
+.preloader.is-leaving{
+  opacity:0;
+  visibility:hidden;
+  filter:blur(6px);
+  pointer-events:none;
+}
+
+.preloader-glow{
+  position:absolute;
+  top:50%; left:50%;
+  width:min(60vw, 640px);
+  height:min(60vw, 640px);
+  transform:translate(-50%, -50%);
+  border-radius:50%;
+  background:radial-gradient(circle, var(--glow), transparent 68%);
+  opacity:0.5;
+  filter:blur(10px);
+  pointer-events:none;
+}
+
+/* ===== the board panel ===== */
+.preloader-board{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:28px;
+  padding:44px clamp(28px, 6vw, 64px);
+  border-radius:26px;
+  border:1px solid var(--line);
+  background:var(--surface-solid);
+  backdrop-filter:blur(16px);
+  box-shadow:0 24px 60px var(--shadow);
+}
+
+.preloader-board-head{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.preloader-brand{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.preloader-mark{
+  width:34px;
+  height:34px;
+  overflow:visible;
+}
+.pl-frame{
+  fill:rgba(var(--card-rgb),0.55);
+  stroke:var(--line);
+  stroke-width:1.5;
+}
+.pl-trace-base{
+  fill:none;
+  stroke:var(--green-deep);
+  stroke-opacity:0.22;
+  stroke-width:5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.pl-trace{
+  fill:none;
+  stroke:var(--lemon);
+  stroke-width:5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:80px;
+  stroke-dashoffset:calc(80px - (80px * var(--pl-p, 0)));
+  filter:drop-shadow(0 0 6px var(--glow));
+  transition:stroke-dashoffset .2s linear;
+}
+.pl-ring{
+  fill:none;
+  stroke:var(--lemon-deep);
+  stroke-width:2;
+  opacity:0.7;
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:nodePing 2.2s ease-out infinite;
+}
+.pl-node{
+  fill:var(--lemon);
+  filter:drop-shadow(0 0 7px var(--glow));
+}
+
+/* ===== split-flap readouts ===== */
+.preloader-flap-row{
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+}
+.preloader-flap{
+  --split-flap-tile-color:#12182a;
+}
+.preloader-flap--percent .split-flap-text__tile{
+  box-shadow:
+    0 0.035em 0.08em rgba(255,255,255,0.08) inset,
+    0 -0.05em 0.1em rgba(0,0,0,0.45) inset,
+    0 0.18em 0.4em rgba(0,0,0,0.35),
+    0 0 24px var(--glow);
+}
+.preloader-percent-sign{
+  font-family:'Space Grotesk', sans-serif;
+  font-weight:700;
+  font-size:clamp(36px, 7vw, 64px);
+  color:var(--lemon);
+  opacity:0.85;
+  margin-bottom:0.3em;
+}
+
+.preloader-flap--status{
+  opacity:0.9;
+  font-weight:800;
+}
+
+.preloader-bar{
+  position:relative;
+  width:min(320px, 60vw);
+  height:3px;
+  border-radius:2px;
+  overflow:hidden;
+  background:var(--line);
+}
+.preloader-bar i{
+  display:block;
+  width:100%; height:100%;
+  transform-origin:left center;
+  transform:scaleX(var(--pl-p, 0));
+  background:linear-gradient(90deg, var(--green-deep), var(--lemon));
+  box-shadow:0 0 10px var(--glow);
+  transition:transform .2s linear;
+}
+
+@media (max-width:520px){
+  .preloader-board{
+    gap:22px;
+    padding:32px 18px;
+    border-radius:20px;
+  }
+  .preloader-flap-row{ gap:6px; }
+  .preloader-flap--percent{ --split-flap-gap:8px; }
+}
+
+@media (max-width:380px){
+  .preloader-flap--percent{ font-size:56px !important; }
+}

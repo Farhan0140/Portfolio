@@ -1,0 +1,127 @@
+/* Admin-only visual polish layered on top of the Tailwind utilities used
+   throughout src/admin. Kept in its own file (not src/index.css) so it only
+   ships inside the lazy-loaded AdminApp chunk, never the public bundle. */
+
+@keyframes admin-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes admin-modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes admin-glow-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(3%, -4%); }
+}
+
+/* Thin, on-theme scrollbar for the whole admin shell. */
+body.admin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+body.admin-scroll ::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+body.admin-scroll ::-webkit-scrollbar-track {
+  background: transparent;
+}
+body.admin-scroll ::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+body.admin-scroll ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.5);
+  background-clip: padding-box;
+}
+
+.admin-page-enter {
+  animation: admin-fade-in 0.35s ease both;
+}
+
+.admin-modal-panel {
+  animation: admin-modal-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Soft ambient glow blobs fixed behind the admin shell. Purely decorative;
+   opacity kept low so it never competes with content or fights dark cards. */
+.admin-shell {
+  position: relative;
+  isolation: isolate;
+}
+.admin-shell::before,
+.admin-shell::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  width: 42vw;
+  height: 42vw;
+  max-width: 640px;
+  max-height: 640px;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.14;
+  pointer-events: none;
+  animation: admin-glow-drift 20s ease-in-out infinite;
+}
+.admin-shell::before {
+  top: -12%;
+  left: -10%;
+  background: #38bdf8;
+}
+.admin-shell::after {
+  bottom: -16%;
+  right: -12%;
+  background: #6366f1;
+  animation-delay: -10s;
+}
+
+.admin-brand-mark {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.admin-stat-number {
+  background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Left accent bar on the active sidebar link — desktop (stacked) nav only;
+   the mobile horizontal nav relies on the filled background instead. */
+.admin-navlink {
+  position: relative;
+}
+.admin-navlink.admin-navlink-active::before {
+  content: '';
+  position: absolute;
+  left: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #38bdf8, #818cf8);
+}
+@media (max-width: 767px) {
+  .admin-navlink.admin-navlink-active::before {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-page-enter,
+  .admin-modal-panel,
+  .admin-shell::before,
+  .admin-shell::after {
+    animation: none;
+  }
+}
