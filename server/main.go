@@ -16,9 +16,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("db connect: %v", err)
 	}
-	if err := database.AutoMigrate(conn); err != nil {
-		log.Fatalf("automigrate: %v", err)
-	}
+	// if err := database.AutoMigrate(conn); err != nil {
+	// 	log.Fatalf("automigrate: %v", err)
+	// }
 
 	router := httpapi.NewRouter(cfg, conn)
 
