@@ -511,7 +511,7 @@
   }
   .palette-wrap{ position:relative; flex:none; }
   .palette-btn:hover{ transform:rotate(0deg) scale(1.08); }
-  .palette-btn .ic{ position:static; width:18px; height:18px; }
+  .theme-toggle.palette-btn .ic{ position:static; width:18px; height:18px; }
   .palette-menu{
     position:absolute;
     top:calc(100% + 12px);
@@ -961,10 +961,44 @@
   .rail .nav-tools{
     margin-top:auto;
     flex-direction:column;
-    align-items:center;
-    gap:9px;
+    align-items:stretch;
+    gap:6px;
     padding-top:16px;
     width:var(--rail-w);
+    transition:width .38s var(--ease);
+  }
+  .rail:hover .nav-tools,
+  .rail:focus-within .nav-tools{
+    width:100%;
+  }
+  /* Icon-plus-label row, matching .rail-link/.rail-logo geometry, so the
+     palette and theme buttons cascade in the same "icon fixed, label slides
+     in" way as the section links above them. The row itself is the button —
+     hover/focus/click work anywhere across it, not just on the small icon. */
+  .nav-tool-row{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    width:100%;
+    height:46px;
+    padding-left:calc((var(--rail-w) - 36px) / 2);
+    background:none;
+    border:none;
+    font:inherit;
+    color:inherit;
+    text-align:left;
+    cursor:pointer;
+  }
+  .nav-tool-row .rail-label{ color:var(--ink); }
+  .nav-tool-row:hover .theme-toggle,
+  .nav-tool-row:focus-visible .theme-toggle{
+    border-color:var(--green-deep);
+    transform:rotate(-18deg) scale(1.06);
+  }
+  .nav-tool-row:hover .palette-btn,
+  .nav-tool-row:focus-visible .palette-btn{
+    transform:rotate(0deg) scale(1.08);
   }
   /* The menu is positioned against the rail itself, so it always clears the
      open rail; the rail is pinned open for as long as the menu is up. */
@@ -1062,12 +1096,14 @@
     .rail .nav-tools{
       margin-top:0;
       flex-direction:row;
-      width:auto;
+      width:auto !important;
       padding-top:0;
       padding-left:6px;
       border-left:1px solid var(--line);
       margin-left:2px;
     }
+    .nav-tool-row{ padding-left:0; }
+    .nav-tool-row .rail-label{ display:none; }
     .rail .palette-menu{
       left:auto;
       right:8px;
@@ -2255,6 +2291,7 @@
     margin-top:30px;
   }
   .pg-link{
+    display:inline-block;
     width:18px;
     height:1.5px;
     flex:none;

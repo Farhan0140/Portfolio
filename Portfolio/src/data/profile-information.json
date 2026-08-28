@@ -1,0 +1,237 @@
+{
+  "profile": {
+    "firstName": "Farhan",
+    "lastName": "Nadim",
+    "kicker": "Designing, building, and bringing ideas to life.",
+    "description": "I’m a Computer Science & Engineering student who enjoys building things and figuring out how they work. Most of my free time goes into IoT projects, where I get to play with sensors, boards, and code to bring ideas to life.",
+    "typedRoles": ["Software Developer", "IoT tinkerer", "Go & React builder", "Problem solver"],
+    "photoUrl": "https://i.ibb.co.com/PGYMFqnH/Nadim.jpg",
+    "handle": "@Farhan0140",
+    "location": "Narayanganj",
+    "cvUrl": "/Farhan_Nadim_CV.pdf",
+    "email": "farhannadim2023@gmail.com",
+    "phone": "+880 1403 527730",
+    "contactLocation": "Narayanganj, Bangladesh"
+  },
+  "siteContent": {
+    "careerBadgeLabel": "Software Engineer",
+    "careerText": "I’m working toward becoming a Software Engineer, focused on building reliable, thoughtful, and useful software. With every project and every line of code, I’m learning, improving, and getting closer to the kind of engineer I want to become.",
+    "hobbiesTitle": "Building IoT projects",
+    "hobbiesText": "Outside of coursework, I like getting hands-on — connecting microcontrollers, sensors, and code to build small systems that sense, react, and talk to each other. It's where my software knowledge meets the physical world."
+  },
+  "education": [
+    {
+      "id": 1,
+      "order": 0,
+      "degree": "B.Sc. in Computer Science & Engineering",
+      "school": "University of Information Technology and Sciences (UITS)",
+      "duration": "2023 — Present (4th year)",
+      "location": "Dhaka, Bangladesh",
+      "gpa": "3.42 / 4.00",
+      "statusLabel": "Currently enrolled",
+      "description": "I'm working through an undergraduate degree with a strong focus on software engineering principles — pairing the academic theory with practical work through competitive programming, data structure analysis, and full-stack development projects.",
+      "coursework": [
+        "Data Structures & Algorithms",
+        "Object Oriented Programming",
+        "Database Management Systems",
+        "Operating Systems",
+        "Computer Networks",
+        "Software Engineering"
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "id": 1,
+      "order": 0,
+      "title": "Frontend",
+      "icon": "i-monitor",
+      "items": [
+        { "id": 1, "order": 0, "categoryId": 1, "icon": "b-react", "label": "React" },
+        { "id": 2, "order": 1, "categoryId": 1, "icon": "b-js", "label": "JavaScript" },
+        { "id": 3, "order": 2, "categoryId": 1, "icon": "b-html5", "label": "HTML5" },
+        { "id": 4, "order": 3, "categoryId": 1, "icon": "b-css3", "label": "CSS3" }
+      ]
+    },
+    {
+      "id": 2,
+      "order": 1,
+      "title": "Backend & Database",
+      "icon": "i-layers",
+      "items": [
+        { "id": 5, "order": 0, "categoryId": 2, "icon": "b-django", "label": "Django" },
+        { "id": 6, "order": 1, "categoryId": 2, "icon": "b-drf", "label": "Django REST Framework" },
+        { "id": 7, "order": 2, "categoryId": 2, "icon": "b-rest", "label": "REST API" },
+        { "id": 8, "order": 3, "categoryId": 2, "icon": "b-postgres", "label": "PostgreSQL" },
+        { "id": 9, "order": 4, "categoryId": 2, "icon": "b-neon", "label": "Neon" },
+        { "id": 10, "order": 5, "categoryId": 2, "icon": "b-supabase", "label": "Supabase" }
+      ]
+    },
+    {
+      "id": 3,
+      "order": 2,
+      "title": "Languages",
+      "icon": "i-brackets",
+      "items": [
+        { "id": 11, "order": 0, "categoryId": 3, "icon": "b-python", "label": "Python" },
+        { "id": 12, "order": 1, "categoryId": 3, "icon": "b-go", "label": "Go" },
+        { "id": 13, "order": 2, "categoryId": 3, "icon": "b-c", "label": "C" },
+        { "id": 14, "order": 3, "categoryId": 3, "icon": "b-cpp", "label": "C++" },
+        { "id": 15, "order": 4, "categoryId": 3, "icon": "b-sql", "label": "SQL" }
+      ]
+    },
+    {
+      "id": 4,
+      "order": 3,
+      "title": "Tools & Platforms",
+      "icon": "i-toolbox",
+      "items": [
+        { "id": 16, "order": 0, "categoryId": 4, "icon": "b-git", "label": "Git" },
+        { "id": 17, "order": 1, "categoryId": 4, "icon": "b-github", "label": "GitHub" },
+        { "id": 18, "order": 2, "categoryId": 4, "icon": "b-vscode", "label": "VS Code" },
+        { "id": 19, "order": 3, "categoryId": 4, "icon": "b-vercel", "label": "Vercel" },
+        { "id": 20, "order": 4, "categoryId": 4, "icon": "b-netlify", "label": "Netlify" },
+        { "id": 21, "order": 5, "categoryId": 4, "icon": "b-render", "label": "Render" },
+        { "id": 22, "order": 6, "categoryId": 4, "icon": "b-arduino", "label": "Arduino" },
+        { "id": 23, "order": 7, "categoryId": 4, "icon": "b-platformio", "label": "PlatformIO" }
+      ]
+    }
+  ],
+  "projects": {
+    "software": [
+      {
+        "slug": "propnest",
+        "title": "PropNest",
+        "status": "live",
+        "shortDesc": "A property listing and management platform with a Go backend and a React frontend for browsing and managing real estate listings.",
+        "fullDesc": "A property listing and management platform for browsing and managing real estate listings. The backend is written in Go and exposes the API that the React frontend consumes for listing, filtering, and managing properties.",
+        "image": "https://i.ibb.co.com/7NTcMTzk/Screenshot-2026-08-08-213254.png",
+        "imageAlt": "PropNest property listings page showing available real estate",
+        "emoji": "🏠",
+        "tagsLabel": "Built with",
+        "tags": ["Go", "React"],
+        "githubUrl": "https://github.com/Farhan0140/PropNest",
+        "liveUrl": "https://prop-nest-client.vercel.app/login"
+      },
+      {
+        "slug": "soulshield",
+        "title": "Soul_Shield",
+        "status": "progress",
+        "shortDesc": "Soul Shield helps you build and keep daily routines — dhikr, prayers, reading, or any recurring habit — by tracking completion, celebrating streaks with custom reward messages, and nudging you with a notification if you forget. One backend, two clients:",
+        "fullDesc": "Soul Shield helps you build and keep daily routines — dhikr, prayers, reading, or any recurring habit — by tracking completion, celebrating streaks with custom reward messages, and nudging you with a notification if you forget. One backend, two clients:",
+        "image": "https://i.ibb.co.com/TxDFVxHV/Screenshot-2026-08-08-214319.png",
+        "imageAlt": "Soul_Shield application interface",
+        "emoji": "🛡️",
+        "tagsLabel": "Built with",
+        "tags": ["Go", "React", "React-Native"],
+        "githubUrl": "https://github.com/Farhan0140/Soul_Shield",
+        "liveUrl": ""
+      },
+      {
+        "slug": "carbonlens",
+        "title": "CarbonLens",
+        "status": "live",
+        "shortDesc": "An app for tracking and visualizing carbon footprint data, built with Django REST Framework on the backend and React on the frontend.",
+        "fullDesc": "An app for tracking and visualizing carbon footprint data. The backend is built with Django REST Framework, serving the data that the React frontend turns into charts and dashboards.",
+        "image": "assets/projects/carbonlens.webp",
+        "imageAlt": "CarbonLens dashboard showing carbon footprint charts",
+        "emoji": "🌱",
+        "tagsLabel": "Built with",
+        "tags": ["Django REST Framework", "React"],
+        "githubUrl": "https://github.com/Farhan0140/CarbonLens",
+        "liveUrl": "https://carbon-lens.vercel.app/login"
+      },
+      {
+        "slug": "typingtest",
+        "title": "Typing_Speed_Test",
+        "status": "live",
+        "shortDesc": "A lightweight browser-based typing speed test built with plain HTML and JavaScript to measure typing speed and accuracy.",
+        "fullDesc": "A lightweight browser-based typing speed test built with plain HTML and JavaScript. It measures words-per-minute and accuracy in real time as the user types a given passage.",
+        "image": "assets/projects/typing-speed-test.webp",
+        "imageAlt": "Typing Speed Test results screen showing words per minute and accuracy",
+        "emoji": "⌨️",
+        "tagsLabel": "Built with",
+        "tags": ["HTML", "JavaScript"],
+        "githubUrl": "https://github.com/Farhan0140/Typing_Speed_Test",
+        "liveUrl": "https://imaginative-alpaca-a75f52.netlify.app/"
+      }
+    ],
+    "iot": [
+      {
+        "slug": "smart-step",
+        "title": "SmartStep: Footstep Energy Harvesting and Automatic Street Lighting System",
+        "shortDesc": "This project is a smart renewable-energy system that generates electricity from human footsteps and uses the generated energy to power street lights automatically.",
+        "fullDesc": "My project is a Footstep Power Generation and Smart Street Lighting System. The main idea is to generate electricity from human footsteps using piezoelectric sensors. When someone steps on the sensor, mechanical pressure is converted into electrical energy. A voltage sensor measures the generated voltage and sends the data to the ESP32. The ESP32 displays the voltage on an I2C LCD and also sends the information to a website for real-time monitoring. The generated energy is stored in a battery through a charging module. During the night, an LDR detects darkness and automatically activates a relay, which turns on the street lights using the stored battery energy. Therefore, the entire system works automatically, from energy generation and storage to monitoring and street-light control",
+        "image": "https://i.ibb.co.com/HpPwgPsR/704614733-1578060747654663-5600560599121967951-n.jpg",
+        "imageAlt": "Smart Plant Monitor board with soil moisture sensor wired to a microcontroller",
+        "emoji": "🌿",
+        "tagsLabel": "Components used",
+        "tags": ["ESP32", "Piezoelectric", "Voltage Sensor", "I2C LCD", "Charging Module", "Battery", "LDR", "Relay"],
+        "githubUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "slug": "smart-baby",
+        "title": "SmartBaby: IoT-Based Baby Monitoring & Safety System",
+        "shortDesc": "SmartBaby is an IoT-based baby monitoring and safety system designed to continuously monitor a baby's environment and provide automatic protection and real-time alerts to the mother.",
+        "fullDesc": "My project is called SmartBaby, an IoT-based Baby Monitoring and Safety System. The system has two units: a Baby Unit and a Mother Unit. The Baby Unit uses an ESP32 and several sensors to monitor temperature, gas leakage, the baby's crying, and movement around the bed. A laser and LDR are used to create a safety boundary so that if the baby approaches the edge of the bed, the system can provide an alert. An audio module can play a soothing sound, and a servo motor can simulate gentle back-patting. When any abnormal situation occurs, the ESP32 sends a signal wirelessly to an ESP32-C3 Mini in the mother's wearable device. The mother then receives an immediate alert through a buzzer. The main goal of this project is to provide automatic baby monitoring, safety, and quick alerts to the mother.",
+        "image": "https://i.ibb.co.com/jZRHNWDy/704327427-1578060770987994-528982844665955715-n.jpg",
+        "imageAlt": "Home automation hub controlling relays and appliances",
+        "emoji": "🏡",
+        "tagsLabel": "Components used",
+        "tags": ["NodeMCU (ESP32)", "2-channel relay module", "Buzzer", "Power Supply", "Servo Motor", "Speaker", "Memory Module", "Laser Module", "LDR Module", "Microphone/Sound Sensor", "Gas Sensor", "Temperature Sensor"],
+        "githubUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "slug": "himaghar",
+        "title": "Smartshield Himaghar Monitoring & Safety System",
+        "shortDesc": "Smartshield Himaghar is a smart monitoring and safety system designed for cold storage or refrigerated warehouses. The system continuously monitors temperature, gas levels, motion, and door status to protect stored products and maintain a safe environment",
+        "fullDesc": "My project is called ColdGuard, a Smart Cold Storage Monitoring and Safety System. The main controller of the system is an Arduino UNO. It continuously monitors the temperature inside the cold storage using a temperature sensor. A gas sensor detects harmful or unusual gases that may indicate product spoilage or gas leakage, while a PIR sensor detects unexpected movement such as a person or an animal. A magnetic door switch detects when the storage door is opened and helps prevent unnecessary alerts during normal access. If harmful gas is detected, a relay automatically turns on an exhaust fan to remove the gas. If any critical problem occurs, the Arduino uses a SIM800L GSM module to make a phone call to the cold-storage owner. The main goal of this project is to protect stored products and provide automatic safety monitoring and emergency notification.",
+        "image": "https://i.ibb.co.com/Y434yV1g/Screenshot-2026-08-08-230634.png",
+        "imageAlt": "IoT weather station with temperature and humidity sensor",
+        "emoji": "🏭",
+        "tagsLabel": "Components used",
+        "tags": ["Arduino Uno", "DHT22 temperature", "LCD display", "Exhaust Fan", "Humidifier", "Relay", "SIM800L GSM Module", "Magnetic Switch", "PIR Motion Sensor", "Gas Sensor"],
+        "githubUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "slug": "smart-desk",
+        "title": "SmartDesk: IoT-Based Smart Table Management System",
+        "shortDesc": "SmartDesk is an IoT-based smart table management system developed using an ESP32. The system is designed to automatically control and monitor different devices on a study/work table, such as a laptop, cooling fan, and table lamp.",
+        "fullDesc": "My project is called SmartDesk, an IoT-Based Smart Table Management System. The main controller is an ESP32. An ultrasonic sensor detects the presence of my laptop, and based on this, the cooling fan can be controlled automatically. An LDR sensor monitors the room brightness. If the room becomes dark, the table lamp automatically turns on, and when there is enough light, it turns off. An OLED display shows the current time, room temperature, robotic animations, stopwatch, and countdown timer. The system is also connected to a web interface, through which I can remotely control the table lamp and cooling fan. Overall, this project combines IoT, automation, environmental monitoring, and smart workspace management into a single system.",
+        "image": "https://i.ibb.co.com/pj03PDpV/Screenshot-2026-08-08-232740.png",
+        "imageAlt": "SmartDesk: IoT-Based Smart Table Management System",
+        "emoji": "🖥️",
+        "tagsLabel": "Components used",
+        "tags": ["ESP32", "Oled display", "Relay", "Temperature Sensor", "LDR", "Ultrasonic Sensor"],
+        "githubUrl": "",
+        "liveUrl": ""
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "id": 1,
+      "order": 0,
+      "title": "2★ Coder Rank on CodeChef",
+      "issuer": "Phitron",
+      "badgeDate": "Batch 5",
+      "tags": ["CodeChef", "2★ Rated", "Competitive Programming", "Problem Solving"],
+      "image": "https://i.ibb.co.com/SXhbMwh5/farhannadim0000gmail-com-page-0001.jpg",
+      "description": "Awarded for achieving an outstanding result at CodeChef with a 2★ Coder rank, from Phitron Batch 5."
+    }
+  ],
+  "socialLinks": [
+    { "id": 1, "order": 0, "platform": "github", "label": "GitHub", "icon": "i-github", "url": "https://github.com/Farhan0140", "showInHero": true, "showInFooter": true },
+    { "id": 2, "order": 1, "platform": "linkedin", "label": "LinkedIn", "icon": "i-linkedin", "url": "https://www.linkedin.com/in/farhan-nadim-660a52314", "showInHero": true, "showInFooter": true },
+    { "id": 3, "order": 2, "platform": "cv", "label": "CV", "icon": "i-download", "url": "/Farhan_Nadim_CV.pdf", "showInHero": false, "showInFooter": true }
+  ],
+  "codingProfiles": [
+    { "id": 1, "order": 0, "platform": "codeforces", "handle": "_Farhan_Nadim__", "profileUrl": "https://codeforces.com/profile/_Farhan_Nadim__" },
+    { "id": 2, "order": 1, "platform": "codechef", "handle": "farhan_nadim", "profileUrl": "https://www.codechef.com/users/farhan_nadim" },
+    { "id": 3, "order": 2, "platform": "leetcode", "handle": "APtfcgMQdE", "profileUrl": "https://leetcode.com/u/APtfcgMQdE/" },
+    { "id": 4, "order": 3, "platform": "codolio", "handle": "farhan_nadim", "profileUrl": "https://codolio.com/profile/farhan_nadim" }
+  ]
+}

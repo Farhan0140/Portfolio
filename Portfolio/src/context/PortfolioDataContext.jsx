@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo } from 'react';
+import portfolioData from '../data/profile-information.json';
 
 const PortfolioDataContext = createContext(null);
 
@@ -7,59 +8,35 @@ const EMPTY_DATA = {
   siteContent: {},
   education: [],
   skillCategories: [],
-  projects: [],
+  projects: { software: [], iot: [] },
   certifications: [],
   socialLinks: [],
   codingProfiles: [],
 };
 
 /**
- * Fetches the public portfolio payload once and exposes it (plus a couple of
- * derived shapes the existing section components expect) to the whole tree.
+ * Exposes the static portfolio data (bundled from data/profile-information.json)
+ * plus a couple of derived shapes the existing section components expect.
  *
- * Pass `overrideData` (a full payload shape, same as the API response) to
- * render the public section components against unsaved draft data instead —
- * this is how the admin's live preview reuses the real components without a
- * second rendering pipeline.
+ * Pass `overrideData` (a full payload shape, same as profile-information.json)
+ * to render the public section components against unsaved draft data instead.
  */
 export function PortfolioDataProvider({ children, overrideData }) {
-  const [data, setData] = useState(EMPTY_DATA);
-  const [loading, setLoading] = useState(!overrideData);
-  const [error, setError] = useState(null);
-
-  const fetchData = useCallback(() => {
-    setLoading(true);
-    setError(null);
-    return fetch('/api/public/portfolio')
-      .then((res) => {
-        if (!res.ok) throw new Error(`Failed to load portfolio data (${res.status})`);
-        return res.json();
-      })
-      .then((json) => {
-        setData({ ...EMPTY_DATA, ...json });
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message || 'Failed to load portfolio data');
-        setLoading(false);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (overrideData) return undefined;
-    fetchData();
-    return undefined;
-  }, [fetchData, overrideData]);
-
   const value = useMemo(() => {
-    const effective = overrideData ? { ...EMPTY_DATA, ...overrideData } : data;
-    const projects = effective.projects || [];
+    const effective = overrideData ? { ...EMPTY_DATA, ...overrideData } : { ...EMPTY_DATA, ...portfolioData };
+    // `projects` is split into `software`/`iot` in the JSON so adding a new
+    // project to one list never requires renumbering ids/order in the other —
+    // each project's `slug` (already unique) is its identifier, and its
+    // position in the array is its display order.
+    const softwareRows = effective.projects?.software || [];
+    const iotRows = effective.projects?.iot || [];
+    const allProjects = [...softwareRows, ...iotRows];
 
-    // Shape adapters below translate the flat DB rows into the exact prop
+    // Shape adapters below translate the flat JSON rows into the exact prop
     // shapes the (unchanged) section/modal components were built around, so
     // no JSX/markup has to change just because the data source did.
     const toProjectCard = (p) => ({
-      id: p.id,
+      id: p.slug,
       title: p.title,
       desc: p.shortDesc,
       image: p.image,
@@ -70,7 +47,7 @@ export function PortfolioDataProvider({ children, overrideData }) {
       links: { code: p.githubUrl, live: p.liveUrl },
     });
     const toIotCard = (p) => ({
-      id: p.id,
+      id: p.slug,
       title: p.title,
       desc: p.shortDesc,
       image: p.image,
@@ -89,12 +66,12 @@ export function PortfolioDataProvider({ children, overrideData }) {
       links: { code: p.githubUrl, live: p.liveUrl },
     });
 
-    const softwareProjects = projects.filter((p) => p.type === 'software').map(toProjectCard);
-    const iotCards = projects.filter((p) => p.type === 'iot').map(toIotCard);
+    const softwareProjects = softwareRows.map(toProjectCard);
+    const iotCards = iotRows.map(toIotCard);
 
     const projectModalData = {};
-    projects.forEach((p) => {
-      projectModalData[p.id] = toProjectModal(p);
+    allProjects.forEach((p) => {
+      projectModalData[p.slug] = toProjectModal(p);
     });
 
     const certModalData = {};
@@ -104,15 +81,15 @@ export function PortfolioDataProvider({ children, overrideData }) {
 
     return {
       ...effective,
+      projects: allProjects,
       softwareProjects,
       iotCards,
       projectModalData,
       certModalData,
-      loading: overrideData ? false : loading,
-      error: overrideData ? null : error,
-      refetch: fetchData,
+      loading: false,
+      error: null,
     };
-  }, [data, overrideData, loading, error, fetchData]);
+  }, [overrideData]);
 
   return <PortfolioDataContext.Provider value={value}>{children}</PortfolioDataContext.Provider>;
 }

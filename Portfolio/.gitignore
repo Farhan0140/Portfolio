@@ -12,14 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Go backend
-server/.env
-.env
-.env.local
-/portfolio-server
-server/portfolio-server
-server/portfolio-server.exe
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

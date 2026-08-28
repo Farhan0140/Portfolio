@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 
 const TARGET_SELECTOR =
-  '.btn, .theme-toggle, .to-top, .modal-close, .social-pill, .platform-btn, .code-link, .live-link, .project-card, .iot-project-card, .rail-link, .dev-card, .dev-social a, .pg-btn, .cert-card, button';
+  '.btn, .to-top, .modal-close, .social-pill, .platform-btn, .code-link, .live-link, .project-card, .iot-project-card, .rail-link, .nav-tool-row, .dev-card, .dev-social a, .pg-btn, .cert-card, button';
 const SPIN_DURATION = 2;
 const HOVER_DURATION = 0.2;
 const PARALLAX_ON = true;

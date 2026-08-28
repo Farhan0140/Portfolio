@@ -33,23 +33,26 @@ export default function Rail() {
       <div className="nav-tools">
         <div className="palette-wrap">
           <button
-            className="theme-toggle palette-btn"
+            className="nav-tool-row"
             id="paletteBtn"
             type="button"
             ref={btnRef}
             aria-haspopup="true"
             aria-expanded={open}
             aria-controls="paletteMenu"
-            aria-label="Change colour palette"
-            title="Colour palette"
+            aria-label="Colour Palette"
+            title="Colour Palette"
             onClick={(e) => {
               e.stopPropagation();
               setOpen(!open);
             }}
           >
-            <svg className="ic" aria-hidden="true">
-              <use href="#i-palette" />
-            </svg>
+            <span className="theme-toggle palette-btn" aria-hidden="true">
+              <svg className="ic" aria-hidden="true">
+                <use href="#i-palette" />
+              </svg>
+            </span>
+            <span className="rail-label">Colour Palette</span>
           </button>
           <div
             className={'palette-menu' + (open ? ' open' : '')}
@@ -86,19 +89,22 @@ export default function Rail() {
           </div>
         </div>
         <button
-          className="theme-toggle"
+          className="nav-tool-row"
           id="themeToggle"
           type="button"
-          aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-          title="Switch theme"
+          aria-label={theme === 'dark' ? 'Day Mode' : 'Night Mode'}
+          title={theme === 'dark' ? 'Day Mode' : 'Night Mode'}
           onClick={toggleTheme}
         >
-          <svg className="ic i-light" aria-hidden="true">
-            <use href="#i-sun" />
-          </svg>
-          <svg className="ic i-dark" aria-hidden="true">
-            <use href="#i-moon" />
-          </svg>
+          <span className="theme-toggle" aria-hidden="true">
+            <svg className="ic i-light" aria-hidden="true">
+              <use href="#i-sun" />
+            </svg>
+            <svg className="ic i-dark" aria-hidden="true">
+              <use href="#i-moon" />
+            </svg>
+          </span>
+          <span className="rail-label">{theme === 'dark' ? 'Day Mode' : 'Night Mode'}</span>
         </button>
       </div>
 
