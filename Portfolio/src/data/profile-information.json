@@ -100,20 +100,6 @@
   "projects": {
     "software": [
       {
-        "slug": "propnest",
-        "title": "PropNest",
-        "status": "live",
-        "shortDesc": "A property listing and management platform with a Go backend and a React frontend for browsing and managing real estate listings.",
-        "fullDesc": "A property listing and management platform for browsing and managing real estate listings. The backend is written in Go and exposes the API that the React frontend consumes for listing, filtering, and managing properties.",
-        "image": "/image/Screenshot-2026-08-08-213254.webp",
-        "imageAlt": "PropNest property listings page showing available real estate",
-        "emoji": "🏠",
-        "tagsLabel": "Built with",
-        "tags": ["Go", "React"],
-        "githubUrl": "https://github.com/Farhan0140/PropNest",
-        "liveUrl": "https://prop-nest-client.vercel.app/login"
-      },
-      {
         "slug": "soulshield",
         "title": "Soul_Shield",
         "status": "live",
@@ -126,6 +112,20 @@
         "tags": ["Go", "React", "React-Native"],
         "githubUrl": "https://github.com/Farhan0140/Soul_Shield",
         "liveUrl": "https://soul-shield.vercel.app/"
+      },
+      {
+        "slug": "propnest",
+        "title": "PropNest",
+        "status": "live",
+        "shortDesc": "A property listing and management platform with a Go backend and a React frontend for browsing and managing real estate listings.",
+        "fullDesc": "A property listing and management platform for browsing and managing real estate listings. The backend is written in Go and exposes the API that the React frontend consumes for listing, filtering, and managing properties.",
+        "image": "/image/Screenshot-2026-08-08-213254.webp",
+        "imageAlt": "PropNest property listings page showing available real estate",
+        "emoji": "🏠",
+        "tagsLabel": "Built with",
+        "tags": ["Go", "React"],
+        "githubUrl": "https://github.com/Farhan0140/PropNest",
+        "liveUrl": "https://prop-nest-client.vercel.app/login"
       },
       {
         "slug": "carbonlens",

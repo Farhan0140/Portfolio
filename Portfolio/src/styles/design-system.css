@@ -619,7 +619,7 @@
   html{scroll-behavior:smooth;}
 
   body{
-    font-family:'Inter', sans-serif;
+    font-family:var(--font-body);
     padding-left:var(--rail-w);
     color:var(--ink);
     background:
@@ -695,7 +695,7 @@
     transform-origin:center;
   }
   .tr-node .tr-label{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:10.5px;
     font-weight:600;
     letter-spacing:0.16em;
@@ -797,7 +797,7 @@
   footer{ scroll-margin-top:28px; }
 
   .eyebrow{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:13px;
     font-weight:600;
     letter-spacing:0.18em;
@@ -893,7 +893,7 @@
     opacity:1;
   }
   .rail-logo .rail-label{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:16px;
   }
@@ -1161,7 +1161,7 @@
   @keyframes liftIn{ to{ opacity:1; transform:none; } }
 
   .hero-kicker{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:14px;
     font-weight:600;
     letter-spacing:0.16em;
@@ -1187,7 +1187,7 @@
   }
 
   h1.hero-name{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:clamp(48px, 9vw, 96px);
     line-height:0.98;
@@ -1227,7 +1227,7 @@
   .depth-text__face{
     grid-area:1 / 1;
     display:inline-block;
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:clamp(48px, 9vw, 96px);
     line-height:0.98;
@@ -1266,7 +1266,7 @@
   }
 
   .hero-role{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:clamp(18px, 3vw, 26px);
     font-weight:500;
     color:var(--ink);
@@ -1368,7 +1368,7 @@
   }
   .dev-card:hover .dev-dots i:first-child{ background:var(--lemon); }
   .dev-id{
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:10.5px;
     letter-spacing:0.12em;
     color:var(--muted);
@@ -1413,7 +1413,7 @@
   }
   .dev-name{
     display:block;
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:21px;
     letter-spacing:-0.01em;
@@ -1423,7 +1423,7 @@
   }
   .dev-handle{
     display:inline-block;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:11.5px;
     color:var(--lemon);
     /* the chip always sits on the dark scrim, so tint the accent toward white */
@@ -1443,7 +1443,7 @@
   .dev-meta span{ display:inline-flex; align-items:center; gap:5px; }
   .dev-meta .ic{ width:12px; height:12px; }
   .dev-meta .sep{ opacity:0.45; }
-  .dev-status{ color:#34D399; font-family:'JetBrains Mono', monospace; }
+  .dev-status{ color:#34D399; font-family:var(--font-meta); }
   .dev-status .dot{
     width:6px; height:6px;
     border-radius:50%;
@@ -1489,7 +1489,7 @@
   }
 
   .btn{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:600;
     font-size:15px;
     padding:14px 28px;
@@ -1538,7 +1538,7 @@
   .scroll-cue{
     position:absolute;
     bottom:44px; left:24px;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:11.5px;
     letter-spacing:0.16em;
     text-transform:uppercase;
@@ -1572,7 +1572,7 @@
 
   /* ===== Section headings ===== */
   h2.section-title{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:clamp(30px, 5vw, 44px);
     letter-spacing:-0.01em;
@@ -1607,13 +1607,13 @@
     border-color:rgba(var(--accent-deeper-rgb),0.35);
   }
   .edu-degree{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:22px;
     line-height:1.25;
     margin-bottom:12px;
   }
   .edu-school{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:15px;
     font-weight:600;
     line-height:1.45;
@@ -1631,7 +1631,7 @@
     display:flex;
     align-items:center;
     gap:10px;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:12.5px;
     color:var(--muted);
   }
@@ -1640,7 +1640,7 @@
     display:inline-flex;
     align-items:center;
     gap:8px;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:11px;
     font-weight:500;
     letter-spacing:0.1em;
@@ -1667,7 +1667,7 @@
     display:flex;
     align-items:center;
     gap:9px;
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:14px;
     font-weight:600;
     margin-bottom:14px;
@@ -1679,7 +1679,7 @@
     gap:10px;
   }
   .course, .cert-tag{
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:12px;
     color:var(--ink);
     opacity:0.8;
@@ -1720,7 +1720,7 @@
     50%{ transform:scale(1.15); opacity:1;}
   }
   .iot-panel h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:24px;
     margin-bottom:14px;
     position:relative;
@@ -1873,7 +1873,7 @@
   }
   .tech-badge .ic{ width:20px; height:20px; }
   .tech-head h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:17.5px;
     font-weight:600;
     letter-spacing:-0.01em;
@@ -1971,7 +1971,7 @@
   .stat-pill.live{ color:var(--green-deep); }
   .stat-pill.progress{ color:var(--amber); background:rgba(255,196,64,0.15); border-color:rgba(184,134,11,0.25); }
   .stat-pill .num{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:15px;
     font-variant-numeric:tabular-nums;
@@ -2091,7 +2091,7 @@
     z-index:1;
   }
   .project-body h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:18px;
   }
   .project-body p{
@@ -2219,7 +2219,7 @@
   .cert-badge .ic{ width:22px; height:22px; }
   .cert-card:hover .cert-badge{ transform:scale(1.08) rotate(-6deg); }
   .cert-date{
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:11.5px;
     color:var(--muted);
     border:1px solid var(--line);
@@ -2228,7 +2228,7 @@
     white-space:nowrap;
   }
   .cert-title{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:17.5px;
     line-height:1.3;
     margin-bottom:6px;
@@ -2239,7 +2239,7 @@
     margin-bottom:20px;
   }
   .cert-cred{
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:11.5px;
     letter-spacing:0.08em;
     text-transform:uppercase;
@@ -2299,7 +2299,7 @@
     border-radius:2px;
   }
   .pg-btn{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:600;
     font-size:14px;
     font-variant-numeric:tabular-nums;
@@ -2411,7 +2411,7 @@
     flex:1;
   }
   .iot-body h4{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:16px;
   }
   .iot-body p{
@@ -2522,7 +2522,7 @@
     gap:16px;
   }
   .modal-content h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:22px;
   }
   .modal-status{
@@ -2599,7 +2599,7 @@
     animation: pulse 4.5s ease-in-out infinite;
   }
   .ps-count{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:clamp(48px, 8vw, 68px);
     line-height:1;
@@ -2660,13 +2660,13 @@
     transform:scale(1.2) rotate(-6deg);
   }
   .platform-card h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:16.5px;
   }
   .platform-handle{
     font-size:12.5px;
     opacity:0.6;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     word-break:break-all;
   }
   .platform-rating{
@@ -2682,7 +2682,7 @@
   }
   .platform-btn{
     margin-top:auto;
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:13px;
     font-weight:600;
     padding:10px 22px;
@@ -2735,7 +2735,7 @@
   .codolio-badge .ic{ transition:transform .45s var(--ease); }
   .codolio-text{ flex:1 1 240px; min-width:0; }
   .codolio-text h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:17px;
     margin-bottom:5px;
   }
@@ -2778,7 +2778,7 @@
   }
   @keyframes statIn{ to{ opacity:1; transform:none; } }
   .pf-stat b{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:14px;
     font-weight:700;
     color:var(--ink);
@@ -2793,7 +2793,7 @@
   }
   @keyframes shimmer{ to{ background-position:-220% 0; } }
   .pf-note{
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:10px;
     letter-spacing:.04em;
     opacity:.5;
@@ -2802,7 +2802,7 @@
     display:inline-flex;
     align-items:center;
     gap:6px;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:10.5px;
     letter-spacing:.08em;
     text-transform:uppercase;
@@ -2834,7 +2834,7 @@
     border-radius:100px;
     background:var(--ink);
     color:var(--mist);
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-weight:600;
     font-size:15px;
     box-shadow:0 12px 28px var(--shadow);
@@ -2891,7 +2891,7 @@
     text-align:center;
   }
   .footer-title{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:clamp(28px, 5vw, 42px);
     font-weight:700;
     margin-bottom:16px;
@@ -2932,7 +2932,7 @@
     text-align:left;
   }
   .brand-mark{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:21px;
     font-weight:700;
     letter-spacing:-0.015em;
@@ -2941,7 +2941,7 @@
   .brand-mark .dot{ color:var(--green-deep); }
   .rights{
     margin-top:7px;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:12.5px;
     letter-spacing:0.02em;
     color:var(--muted);
@@ -2996,7 +2996,7 @@
   .contact-meta{ flex:1; min-width:0; }
   .contact-label{
     display:block;
-    font-family:'JetBrains Mono', monospace;
+    font-family:var(--font-meta);
     font-size:10.5px;
     letter-spacing:0.16em;
     text-transform:uppercase;
@@ -3005,7 +3005,7 @@
   }
   .contact-value{
     display:block;
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:15.5px;
     font-weight:600;
     overflow:hidden;
@@ -3050,7 +3050,7 @@
     padding:30px 28px 28px;
   }
   .contact-form h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:20px;
     font-weight:700;
     margin-bottom:26px;
@@ -3104,7 +3104,7 @@
     border-radius:100px;
     background:var(--green-deep);
     color:var(--on-lemon);
-    font-family:'Space Grotesk', sans-serif;
+    font-family:var(--font-ui);
     font-size:13px;
     font-weight:700;
     letter-spacing:0.14em;
